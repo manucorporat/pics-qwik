@@ -1,6 +1,6 @@
-import { component$ } from '@builder.io/qwik';
-import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
-import { IMAGES } from '~/pics';
+import { component$ } from "@builder.io/qwik";
+import { type DocumentHead, useLocation } from "@builder.io/qwik-city";
+import { IMAGES } from "~/pics";
 
 export default component$(() => {
   const loc = useLocation();
@@ -10,7 +10,11 @@ export default component$(() => {
     <>
       <div class="flex w-[80%] max-w-screen-m justify-center gap-10 transition-all mx-auto my-10">
         <div class="flex-1">
-          <img src={image.image} class="rounded-3xl shadow-xl" style={{'view-transition-name': `picture`}} />
+          <img
+            src={image.image}
+            class="rounded-3xl shadow-xl"
+            style={{ "view-transition-name": `picture` }}
+          />
         </div>
         <div class="flex-1 self-center">{image.message}</div>
       </div>
@@ -21,5 +25,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Manu\'s Pics',
+  title: "Manu's Pics",
 };

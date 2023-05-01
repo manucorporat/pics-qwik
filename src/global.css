@@ -23,9 +23,9 @@
   --qwik-dark-background: #151934;
   --qwik-dark-text: #ffffff;
 
-  --foreground-rgb: 0,0,10;
-  --background-start-rgb: 214,219,230;
-  --background-end-rgb: 255,245,255;
+  --foreground-rgb: 0, 0, 10;
+  --background-start-rgb: 214, 219, 230;
+  --background-end-rgb: 255, 245, 255;
 
   view-transition-name: root !important;
 }
@@ -36,21 +36,51 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
 
 body {
   padding: 0;
   line-height: inherit;
-  background: linear-gradient(to bottom,transparent,rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   background-attachment: fixed;
   text-underline-position: from-font;
 }
 
-.pic-link[aria-pressed=true],
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.pic-link[aria-pressed="true"],
 .pic-link.pic-prev {
   view-transition-name: picture;
 }

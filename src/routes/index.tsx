@@ -1,6 +1,6 @@
-import { component$ } from '@builder.io/qwik';
-import { type DocumentHead, Link, useLocation } from '@builder.io/qwik-city';
-import { IMAGES } from '~/pics';
+import { component$ } from "@builder.io/qwik";
+import { type DocumentHead, Link, useLocation } from "@builder.io/qwik-city";
+import { IMAGES } from "~/pics";
 
 export default component$(() => {
   const loc = useLocation();
@@ -12,7 +12,8 @@ export default component$(() => {
             href={`/img/${index}/`}
             class={{
               "pic-link": true,
-              "pic-prev": !loc.isNavigating && loc.prevUrl?.pathname === `/img/${index}/`
+              "pic-prev":
+                !loc.isNavigating && loc.prevUrl?.pathname === `/img/${index}/`,
             }}
             key={index}
           >
@@ -30,5 +31,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Manu\'s Pics',
+  title: "Manu's Pics",
 };
