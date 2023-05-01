@@ -1,26 +1,14 @@
-import { component$, Slot, useStyles$ } from '@builder.io/qwik';
-import { routeLoader$ } from '@builder.io/qwik-city';
-
-import Header from '~/components/starter/header/header';
-import Footer from '~/components/starter/footer/footer';
-
-import styles from './styles.css?inline';
-
-export const useServerTimeLoader = routeLoader$(() => {
-  return {
-    date: new Date().toISOString(),
-  };
-});
+import { component$, Slot } from '@builder.io/qwik';
 
 export default component$(() => {
-  useStyles$(styles);
   return (
     <>
-      <Header />
+      <h1 class="text-[6em] mx-auto text-center my-20">
+        Manu's Pics
+      </h1>
       <main>
         <Slot />
       </main>
-      <Footer />
     </>
   );
 });
