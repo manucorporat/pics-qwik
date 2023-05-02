@@ -15,14 +15,6 @@
  */
 
 :root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
-
   --foreground-rgb: 0, 0, 10;
   --background-start-rgb: 214, 219, 230;
   --background-end-rgb: 255, 245, 255;

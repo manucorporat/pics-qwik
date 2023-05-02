@@ -1,31 +1,82 @@
 import { component$ } from "@builder.io/qwik";
-import { type DocumentHead, Link, useLocation } from "@builder.io/qwik-city";
-import { IMAGES } from "~/pics";
+import {
+  type DocumentHead,
+  Link,
+  useLocation,
+  routeLoader$,
+  useNavigate,
+} from "@builder.io/qwik-city";
+
+export interface Image {
+  id: string;
+  author: string;
+  width: number;
+  height: number;
+  url: string;
+  download_url: string;
+}
+
+function shuffleArray(array: any[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+export const useGetImages = routeLoader$(async ({query}) => {
+  const res = await fetch("https://picsum.photos/list");
+  const random = await query.has('random');
+  let json = await res.json();
+  if (Array.isArray(json)) {
+    if (random) {
+      shuffleArray(json);
+    } else {
+      json = json.slice(900);
+    }
+
+    return json.slice(0, 5) as Image[];
+  }
+  return [];
+});
 
 export default component$(() => {
   const loc = useLocation();
+  const nav = useNavigate();
+  const images = useGetImages();
   return (
     <>
-      <div class="flex w-full justify-center m-10 gap-2 transition-all">
-        {IMAGES.map((image, index) => (
+      <div class="flex w-full justify-center my-10 gap-2 transition-all">
+        {images.value.map((image) => (
           <Link
-            href={`/img/${index}/`}
+            href={`/img/${image.id}/`}
             class={{
+              "bg-slate-500 max-w-[15vw] h-[30vw] hover:max-w-[20vw] transition-all":
+                true,
               "pic-link": true,
               "pic-prev":
-                !loc.isNavigating && loc.prevUrl?.pathname === `/img/${index}/`,
+                !loc.isNavigating &&
+                loc.prevUrl?.pathname === `/img/${image.id}/`,
             }}
-            key={index}
+            key={image.id}
           >
             <img
-              src={image.image}
-              class="max-w-[15em] h-[30em] object-cover hover:max-w-[20em] transition-all"
+              width="500"
+              height="600"
+              src={`https://picsum.photos/id/${image.id}/500/600.webp`}
+              class="w-full h-full object-cover"
             />
           </Link>
         ))}
       </div>
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
+      <button
+        class="block m-auto rounded-md border-2 p-3"
+        onClick$={() => {
+          nav('/?random=true', true);
+        }}
+      >
+        Randomize images
+      </button>
+      <div></div>
     </>
   );
 });
