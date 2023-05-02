@@ -29,7 +29,7 @@ export default component$(() => {
           ></path>
         </svg>
       </a>
-      <h1 class="text-[6em] mx-auto text-center my-20">Qwik Pics</h1>
+      <h1 class="variable-h1 mx-auto text-center my-20">Qwik Pics</h1>
       <main>
         <Slot />
       </main>

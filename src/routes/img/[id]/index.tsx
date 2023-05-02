@@ -18,15 +18,15 @@ export default component$(() => {
   const info = useImageInfo();
   return (
     <>
-      <div class="flex w-[80%] max-w-screen-m justify-center gap-10 transition-all mx-auto my-10">
-        <div class="flex-1">
+      <div class="flex w-[80%] max-w-screen-m justify-center items-center gap-10 transition-all mx-auto my-10 flex-wrap">
+        <div class="flex-1 min-w-[400px]">
           <img
             src={`https://picsum.photos/id/${info.value.id}/500/600.webp`}
-            class="rounded-3xl shadow-xl"
+            class="rounded-3xl shadow-xl m-auto"
             style={{ "view-transition-name": `picture` }}
           />
         </div>
-        <div class="flex-1 self-center">
+        <div class="flex-1 self-center min-w-[400px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor,
           nunc eget ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
           nisl nisl nec nisl. Donec auctor, nunc eget ultricies ultricies, nunc

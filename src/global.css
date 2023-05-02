@@ -77,6 +77,10 @@ body {
   view-transition-name: picture;
 }
 
+.variable-h1 {
+  font-size: clamp(20px, 14vw, 5rem);
+}
+
 ::view-transition-old(picture),
 ::view-transition-new(picture) {
   /* Prevent the default animation,
