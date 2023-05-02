@@ -4,7 +4,6 @@ import {
   Link,
   useLocation,
   routeLoader$,
-  useNavigate,
 } from "@builder.io/qwik-city";
 
 export interface Image {
@@ -24,7 +23,12 @@ function shuffleArray(array: any[]) {
 }
 
 export const useGetImages = routeLoader$(async ({ query }) => {
-  const res = await fetch("https://picsum.photos/list");
+  const res = await fetch("https://picsum.photos/list", {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+    },
+  });
   const random = await query.has("random");
   let json = await res.json();
   if (Array.isArray(json)) {
@@ -41,7 +45,6 @@ export const useGetImages = routeLoader$(async ({ query }) => {
 
 export default component$(() => {
   const loc = useLocation();
-  const nav = useNavigate();
   const images = useGetImages();
   return (
     <>

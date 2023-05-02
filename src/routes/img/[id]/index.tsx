@@ -4,7 +4,12 @@ import type { Image } from "~/routes";
 
 export const useImageInfo = routeLoader$(async ({ params }) => {
   const id = parseInt(params.id, 10);
-  const res = await fetch(`https://picsum.photos/id/${id}/info`);
+  const res = await fetch(`https://picsum.photos/id/${id}/info`, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+    },
+  });
   const json = (await res.json()) as Image;
   return json;
 });
