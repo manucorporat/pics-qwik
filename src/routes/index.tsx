@@ -23,9 +23,9 @@ function shuffleArray(array: any[]) {
   }
 }
 
-export const useGetImages = routeLoader$(async ({query}) => {
+export const useGetImages = routeLoader$(async ({ query }) => {
   const res = await fetch("https://picsum.photos/list");
-  const random = await query.has('random');
+  const random = await query.has("random");
   let json = await res.json();
   if (Array.isArray(json)) {
     if (random) {
@@ -68,14 +68,13 @@ export default component$(() => {
           </Link>
         ))}
       </div>
-      <button
-        class="block m-auto rounded-md border-2 p-3"
-        onClick$={() => {
-          nav('/?random=true', true);
-        }}
+      <Link
+        class="block w-fit m-auto rounded-md border-2 p-3 border-slate-500"
+        href="/?random=true"
+        reload
       >
         Randomize images
-      </button>
+      </Link>
       <div></div>
     </>
   );
