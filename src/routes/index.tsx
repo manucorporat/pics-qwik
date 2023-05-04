@@ -78,7 +78,6 @@ export default component$(() => {
       >
         Randomize images
       </Link>
-      <div></div>
     </>
   );
 });

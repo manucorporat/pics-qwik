@@ -2,11 +2,11 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@builder.io/qwik':
-    specifier: ^0.107.0
-    version: 0.107.0(undici@5.22.0)
+    specifier: ^1.0.0
+    version: 1.0.0(undici@5.22.0)
   '@builder.io/qwik-city':
-    specifier: ^0.107.0
-    version: 0.107.0
+    specifier: ^1.0.0
+    version: 1.0.0
   '@types/eslint':
     specifier: 8.37.0
     version: 8.37.0
@@ -55,8 +55,8 @@ devDependencies:
 
 packages:
 
-  /@builder.io/qwik-city@0.107.0:
-    resolution: {integrity: sha512-t64cq3dwhWdCC9ZJhbJ1G4cbnNzjudHBkx/u0qbr6yLP8V6oRk2eJ5iPLq3R5pUqpbonRQUm4PokYB0mJK1Lwg==}
+  /@builder.io/qwik-city@1.0.0:
+    resolution: {integrity: sha512-nHlDsvYHRWpSmRgg3bb93shn0p1OeMLvBYyIINitGDPxRSK1RyddtJXFAE24MlEEwzetF82xSte3SiC55oPUaQ==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     dependencies:
       '@mdx-js/mdx': 2.3.0
@@ -68,8 +68,8 @@ packages:
       - supports-color
     dev: true
 
-  /@builder.io/qwik@0.107.0(undici@5.22.0):
-    resolution: {integrity: sha512-YcLvM4sW69rKbK+tcOm60+rvbH7j/b3x2m3+dhGQOgyGMWw8WqoCAmr5clF5xONM0pCaOkrh6I3SncRedXFBYw==}
+  /@builder.io/qwik@1.0.0(undici@5.22.0):
+    resolution: {integrity: sha512-U1eTIKTBUiW2dbPMCaTzS7K1bMCI9ovtfsvdduwnVThGXRSrX+v2X4U/UmHHPzfOjC55X5wYLc17cw5EwFBVVA==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
